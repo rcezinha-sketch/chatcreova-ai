@@ -1,11 +1,1 @@
-let selected='Criar Prompt Profissional';
-document.querySelectorAll('[data-tool]').forEach(b=>b.onclick=()=>{selected=b.dataset.tool;document.getElementById('toolTitle').textContent=selected;document.getElementById('idea').focus();});
-document.querySelectorAll('.formats button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.formats button').forEach(x=>x.classList.remove('active'));b.classList.add('active')});
-document.getElementById('generate').onclick=()=>{
- const idea=document.getElementById('idea').value.trim();
- const format=document.querySelector('.formats .active').textContent;
- const out=document.getElementById('result');
- if(!idea){out.classList.remove('hidden');out.textContent='Escreva uma ideia primeiro para testar o fluxo.';return}
- out.classList.remove('hidden');
- out.textContent=`DEMONSTRAÇÃO — ${selected}\nFormato: ${format}\n\nSua ideia:\n${idea}\n\n✓ Fluxo funcionando. Nesta primeira versão nenhuma API paga está conectada, portanto nenhum crédito real foi consumido.`;
-};
+const q=s=>document.querySelector(s),qa=s=>document.querySelectorAll(s);q("#guideBtn").onclick=()=>{q("#guide").classList.remove("hidden");q("#guide").scrollIntoView({behavior:"smooth"})};q("#fastBtn").onclick=()=>q(".studio").scrollIntoView({behavior:"smooth"});qa(".formats button").forEach(b=>b.onclick=()=>{qa(".formats button").forEach(x=>x.classList.remove("active"));b.classList.add("active")});q("#generate").onclick=()=>{let v=q("#idea").value.trim(),f=q(".formats .active").textContent,r=q("#result");r.textContent=v?`DEMONSTRAÇÃO CHATCREOVA AI\n\nFormato: ${f}\nObjetivo: ${v}\n\nDireção sugerida:\n• Gancho claro e objetivo.\n• Estrutura organizada passo a passo.\n• Visual e linguagem adaptados ao formato.\n• Revisão antes de publicar.\n\nV2 local: nenhuma API paga foi usada.`:"Escreva sua ideia primeiro.";r.classList.remove("hidden")};q("#music").onclick=()=>{let n=q("#song").value||"Sem título",s=q("#style").value||"A definir",l=q("#lyrics").value||"Ideia ainda não informada",r=q("#musicResult");r.textContent=`PROJETO MUSICAL\n\nTítulo: ${n}\nEstilo: ${s}\nBase: ${l}\n\nEstrutura: Intro → Verso → Pré-refrão → Refrão → Verso 2 → Ponte → Refrão final.`;r.classList.remove("hidden")};
