@@ -1,0 +1,9 @@
+{
+  "name": "ChatCreova AI",
+  "short_name": "ChatCreova",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07091b",
+  "theme_color": "#101338",
+  "description": "Protótipo PWA do ChatCreova AI"
+}
