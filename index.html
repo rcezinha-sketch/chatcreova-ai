@@ -1,23 +1,99 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#070b1c"><title>ChatCreova AI — Beta V14</title>
-<link rel="manifest" href="V14-manifest.json"><link rel="stylesheet" href="V14-estilo-css.css"></head>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ChatCreova AI — V15</title>
+<link rel="stylesheet" href="V15-estilo.css">
+</head>
+
 <body>
-<header class="topbar"><button id="menuBtn">☰</button><div class="brand">✦ <b>ChatCreova <i>AI</i></b><span>V14</span></div><div class="topActions"><button id="helpBtn">❓ Ajuda</button><span class="credits">◉ 20 demo</span></div></header>
-<div class="appShell"><aside id="sidebar" class="sidebar"><div class="sideTitle">ESPAÇO DE TRABALHO</div>
-<button class="nav active" data-view="home">⌂ Início</button><button class="nav" data-view="manager">🧠 Gerente</button><button class="nav" data-view="video">🎬 Vídeo</button><button class="nav" data-view="image">🎨 Imagem</button><button class="nav" data-view="voice">🎙️ Voz</button><button class="nav" data-view="music">🎵 Música</button><button class="nav" data-view="prompts">✨ Prompts</button><button class="nav" data-view="sites">🌐 Sites & Apps</button><button class="nav" data-view="more">▦ Mais</button><div class="spacer"></div><button class="nav" data-view="space">🗂️ Meu Espaço</button><small>Beta local • APIs pagas desligadas</small></aside>
-<main class="workspace">
-<section id="home" class="view active"><div class="welcome"><div class="orb">C</div><span class="eyebrow">CHATCREOVA GUIADO</span><h1>O que vamos criar hoje?</h1><p>Conte o resultado que precisa. O Gerente coordena tudo sem tirar você da conversa.</p><div class="quick"><button data-manager="Crie um vídeo para redes sociais.">🎬 Criar vídeo</button><button data-manager="Crie uma imagem.">🎨 Criar imagem</button><button data-open="voice">🎙️ Criar voz</button><button data-manager="Crie conteúdo para vender um produto.">🛒 Vender produto</button></div></div></section>
-<section id="manager" class="view"><div class="managerHead"><div><span class="eyebrow">GERENTE GERAL • V14</span><h2>Gerente permanece no comando</h2></div><span class="free">0 CRÉDITOS</span></div><div id="chat" class="chat"><div class="msg ai"><b>🧠 Gerente Geral</b><p>Diga o que deseja criar. A equipe trabalha nos bastidores e a entrega volta para esta conversa.</p></div></div><div id="progress" class="progress hidden"><span>Pedido</span><i>→</i><span>Organização</span><i>→</i><span>Produção</span><i>→</i><span>QA</span><i>→</i><span>Pronto</span></div><div id="team" class="team hidden"></div></section>
-<section id="video" class="view"><h2>🎬 Vídeo</h2><p>Área manual. O Gerente não navega para cá automaticamente.</p><mark>EM CONSTRUÇÃO</mark></section>
-<section id="image" class="view"><h2>🎨 Imagem & Design AI</h2><p>Área manual. FLUX Schnell local está em estudo; nenhuma API paga é acionada.</p><mark>GERAÇÃO EXTERNA DESLIGADA</mark></section>
-<section id="voice" class="view"><h2>🎙️ Estúdio de Voz</h2><textarea id="voiceText" maxlength="7000" placeholder="Cole sua narração..."></textarea><div><span id="count">0</span>/7000 • <span id="duration">~0 min</span></div><select id="voiceSelect"></select><div class="actions"><button id="speak">▶ Ouvir</button><button id="pause">⏯ Pausar</button><button id="stop">■ Parar</button></div></section>
-<section id="music" class="view"><h2>🎵 Music Studio AI</h2><p>Planejamento de letra, estilo e estrutura.</p><mark>ÁUDIO REAL EM CONSTRUÇÃO</mark></section>
-<section id="prompts" class="view"><h2>✨ Prompts</h2><button data-manager="Crie e melhore um prompt completo.">Abrir com Gerente</button></section>
-<section id="sites" class="view"><h2>🌐 Sites & Apps</h2><mark>EM CONSTRUÇÃO</mark></section>
-<section id="more" class="view"><h2>▦ Mais ferramentas</h2><div class="toolgrid"><article data-manager="Quero ajuda Profissional e de Escritório."><b>💼 Profissional & Escritório</b></article><article data-manager="Quero ajuda em Educação e Acadêmico."><b>🎓 Educação & Acadêmico</b></article><article data-manager="Quero criar conteúdo para vender um produto."><b>🛒 Vendas & E-commerce</b></article></div></section>
-<section id="space" class="view"><h2>🗂️ Meu Espaço</h2><div id="savedProjects"></div></section>
-</main></div>
-<div class="composer"><button id="micBtn">🎤</button><button id="attachBtn">📎</button><textarea id="mainInput" rows="1" placeholder="Diga ao ChatCreova o que você precisa..."></textarea><button id="sendBtn" class="send">➤</button></div>
-<div id="helpModal" class="modal hidden"><div class="modalBox"><button id="closeHelp">×</button><h2>V14</h2><p>Navegação manual separada do processamento interno. Sem artefato válido, não existe PRONTO.</p></div></div>
-<script src="V14-app.js"></script></body></html>
+
+<header>
+  <b>✦ ChatCreova <i>AI</i></b>
+  <span id="status">● verificando IA...</span>
+  <button id="helpBtn">❓ Ajuda IA</button>
+</header>
+
+<div class="layout">
+
+<aside>
+  <button data-view="chat">💬 ChatCreova</button>
+  <button data-view="channels">📺 Canais & Marcas</button>
+  <button data-view="space">📁 Meu Espaço</button>
+
+  <hr>
+
+  <button data-fill="Crie um roteiro completo para vídeo sobre ">🎬 Vídeo</button>
+  <button data-fill="Crie um prompt profissional de imagem sobre ">🎨 Imagem</button>
+  <button data-fill="Crie uma narração sobre ">🎙️ Voz</button>
+  <button data-fill="Crie uma música original no estilo ">🎵 Música</button>
+
+  <small>
+    🔒 Teste local R$0<br>
+    qwen3.5:4b
+  </small>
+</aside>
+
+<main>
+
+<section id="chat" class="view active">
+  <h1>O que vamos <em>criar?</em></h1>
+  <p>Peça normalmente. A IA entende, cria e entrega — sem Gerente.</p>
+
+  <select id="channelSelect">
+    <option value="">Sem canal/marca selecionado</option>
+  </select>
+
+  <div id="messages">
+    <div class="msg ai">
+      <b>ChatCreova AI</b>
+      <p>Olá! Diga o que você quer criar.</p>
+    </div>
+  </div>
+
+  <div class="composer">
+    <textarea id="input" placeholder="Ex.: Crie um vídeo de 3 minutos sobre Daniel na cova dos leões..."></textarea>
+    <button id="send">➤ Enviar</button>
+  </div>
+</section>
+
+<section id="channels" class="view">
+  <h1>Canais & <em>Marcas</em></h1>
+  <p>Cadastre cada canal uma vez. Ao selecioná-lo no chat, a IA usa esse contexto.</p>
+
+  <div class="panel">
+    <input id="chName" placeholder="Nome do canal ou marca">
+    <input id="chPlatform" placeholder="Plataforma">
+    <input id="chNiche" placeholder="Nicho / assunto">
+    <input id="chLanguage" placeholder="Idioma principal">
+    <textarea id="chRules" placeholder="Identidade visual, personagem, público, regras e preferências..."></textarea>
+    <button id="saveChannel">＋ Salvar canal/marca</button>
+  </div>
+
+  <div id="channelCards"></div>
+</section>
+
+<section id="space" class="view">
+  <h1>Meu <em>Espaço</em></h1>
+  <div class="panel">
+    V15 local: Chat Qwen + Ajuda IA + Canais & Marcas. APIs pagas e publicação externa desligadas.
+  </div>
+</section>
+
+</main>
+</div>
+
+<div id="help" class="modal">
+  <div class="box">
+    <button id="closeHelp">✕</button>
+    <h2>❓ Ajuda IA</h2>
+    <textarea id="helpInput" placeholder="Como posso usar o ChatCreova?"></textarea>
+    <button id="helpSend">Perguntar</button>
+    <pre id="helpAnswer"></pre>
+  </div>
+</div>
+
+<script src="V15-app.js"></script>
+</body>
+</html>
