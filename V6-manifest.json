@@ -1,0 +1,9 @@
+{
+  "name": "ChatCreova AI — Beta V6",
+  "short_name": "ChatCreova AI",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#070a1d",
+  "theme_color": "#101338",
+  "description": "Crie. Transforme. Publique."
+}
