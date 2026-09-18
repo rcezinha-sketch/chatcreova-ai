@@ -1,0 +1,8 @@
+{
+  "name": "ChatCreova AI",
+  "short_name": "ChatCreova",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050817",
+  "theme_color": "#070b1c"
+}
