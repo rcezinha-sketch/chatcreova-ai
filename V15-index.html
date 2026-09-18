@@ -1,8 +1,220 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ChatCreova AI — V15</title><link rel="stylesheet" href="V15-estilo.css"></head><body>
-<header><b>✦ ChatCreova <i>AI</i></b><span id="status">● verificando IA...</span><button id="helpBtn">❓ Ajuda IA</button></header>
-<div class="layout"><aside><button data-view="chat">💬 ChatCreova</button><button data-view="channels">📺 Canais & Marcas</button><button data-view="space">📁 Meu Espaço</button><hr><button data-fill="Crie um roteiro completo para vídeo sobre ">🎬 Vídeo</button><button data-fill="Crie um prompt profissional de imagem sobre ">🎨 Imagem</button><button data-fill="Crie uma narração sobre ">🎙️ Voz</button><button data-fill="Crie uma música original no estilo ">🎵 Música</button><small>🔒 Teste local R$0<br>qwen3.5:4b</small></aside>
-<main><section id="chat" class="view active"><h1>O que vamos <em>criar?</em></h1><p>Peça normalmente. A IA entende, cria e entrega — sem Gerente.</p><select id="channelSelect"><option value="">Sem canal/marca selecionado</option></select><div id="messages"><div class="msg ai"><b>ChatCreova AI</b><p>Olá! Diga o que você quer criar.</p></div></div><div class="composer"><textarea id="input" placeholder="Ex.: Crie um vídeo de 3 minutos sobre Daniel na cova dos leões..."></textarea><button id="send">➤ Enviar</button></div></section>
-<section id="channels" class="view"><h1>Canais & <em>Marcas</em></h1><p>Cadastre cada canal uma vez. Ao selecioná-lo no chat, a IA usa esse contexto.</p><div class="panel"><input id="chName" placeholder="Nome do canal ou marca"><input id="chPlatform" placeholder="Plataforma"><input id="chNiche" placeholder="Nicho / assunto"><input id="chLanguage" placeholder="Idioma principal"><textarea id="chRules" placeholder="Identidade visual, personagem, público, regras e preferências..."></textarea><button id="saveChannel">＋ Salvar canal/marca</button></div><div id="channelCards"></div></section>
-<section id="space" class="view"><h1>Meu <em>Espaço</em></h1><div class="panel">V15 local: Chat Qwen + Ajuda IA + Canais & Marcas. APIs pagas e publicação externa desligadas.</div></section></main></div>
-<div id="help" class="modal"><div class="box"><button id="closeHelp">✕</button><h2>❓ Ajuda IA</h2><textarea id="helpInput" placeholder="Como posso usar o ChatCreova?"></textarea><button id="helpSend">Perguntar</button><pre id="helpAnswer"></pre></div></div>
-<script src="V15-app.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07122f">
+  <title>ChatCreova AI — V15</title>
+  <link rel="stylesheet" href="V15-estilo.css">
+</head>
+
+<body>
+
+<header>
+  <b>✦ ChatCreova <i>AI</i></b>
+  <span id="status">● verificando IA...</span>
+  <button id="helpBtn">❓ Ajuda IA</button>
+</header>
+
+<div class="layout">
+
+  <aside>
+    <button data-view="chat">💬 ChatCreova</button>
+
+    <button data-fill="Crie um roteiro completo para vídeo sobre ">
+      🎬 Vídeo
+    </button>
+
+    <button data-fill="Crie um prompt profissional de imagem sobre ">
+      🖼️ Imagem
+    </button>
+
+    <button data-fill="Crie uma narração profissional sobre ">
+      🎙️ Voz
+    </button>
+
+    <button data-fill="Crie uma música original no estilo ">
+      🎵 Música
+    </button>
+
+    <button data-fill="Crie um prompt profissional para ">
+      ✍️ Prompts
+    </button>
+
+    <button data-fill="Crie a estrutura completa de um site ou aplicativo para ">
+      🌐 Sites & Apps
+    </button>
+
+    <button data-fill="Ajude com uma atividade de educação ou estudo sobre ">
+      🎓 Educação
+    </button>
+
+    <button data-fill="Crie um material profissional para ">
+      💼 Profissional
+    </button>
+
+    <button data-fill="Crie uma solução para empresa ou negócio sobre ">
+      🏢 Empresas
+    </button>
+
+    <button data-fill="Crie um conteúdo de vendas e e-commerce para ">
+      🛒 Vendas
+    </button>
+
+    <button data-fill="Preciso usar uma ferramenta para ">
+      ⚡ Ferramentas
+    </button>
+
+    <button data-view="channels">
+      📺 Canais & Marcas
+    </button>
+
+    <button data-view="space">
+      📁 Meu Espaço
+    </button>
+
+    <button id="helpSideBtn">
+      ❓ Ajuda / Suporte IA
+    </button>
+  </aside>
+
+  <main>
+
+    <section id="chat" class="view active">
+
+      <h1>
+        O que vamos <em>criar?</em>
+      </h1>
+
+      <p>
+        Converse normalmente. Explique o que precisa e o ChatCreova prepara a entrega.
+      </p>
+
+      <select id="channelSelect">
+        <option value="">
+          Sem canal/marca selecionado
+        </option>
+      </select>
+
+      <div id="messages">
+
+        <div class="msg ai">
+          <b>✦ ChatCreova AI</b>
+          <p>Olá! Diga o que você quer criar.</p>
+        </div>
+
+      </div>
+
+      <div class="composer">
+
+        <textarea
+          id="input"
+          placeholder="Diga ao ChatCreova o que você precisa..."
+        ></textarea>
+
+        <button id="send">
+          ➤ Enviar
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <section id="channels" class="view">
+
+      <h1>
+        Canais & <em>Marcas</em>
+      </h1>
+
+      <p>
+        Cadastre cada canal uma vez. Ao selecioná-lo no chat,
+        a IA usa esse contexto.
+      </p>
+
+      <div class="panel">
+
+        <input
+          id="chName"
+          placeholder="Nome do canal ou marca"
+        >
+
+        <input
+          id="chPlatform"
+          placeholder="Plataforma"
+        >
+
+        <input
+          id="chNiche"
+          placeholder="Nicho / assunto"
+        >
+
+        <input
+          id="chLanguage"
+          placeholder="Idioma principal"
+        >
+
+        <textarea
+          id="chRules"
+          placeholder="Identidade visual, personagem, público, regras e preferências..."
+        ></textarea>
+
+        <button id="saveChannel">
+          ＋ Salvar canal/marca
+        </button>
+
+      </div>
+
+      <div id="channelCards"></div>
+
+    </section>
+
+
+    <section id="space" class="view">
+
+      <h1>
+        Meu <em>Espaço</em>
+      </h1>
+
+      <div class="panel">
+        Organize aqui seus projetos e conteúdos salvos.
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<div id="help" class="modal">
+
+  <div class="box">
+
+    <button id="closeHelp">
+      ✕
+    </button>
+
+    <h2>
+      ❓ Ajuda / Suporte IA
+    </h2>
+
+    <textarea
+      id="helpInput"
+      placeholder="Como posso usar o ChatCreova?"
+    ></textarea>
+
+    <button id="helpSend">
+      Perguntar
+    </button>
+
+    <pre id="helpAnswer"></pre>
+
+  </div>
+
+</div>
+
+<script src="V15-app.js"></script>
+
+</body>
+</html>
