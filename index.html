@@ -1,19 +1,2302 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#06102d"><title>ChatCreova AI</title>
-<link rel="stylesheet" href="V17-estilo.css?v=17">
-</head><body>
-<header><b>✦ ChatCreova <i>AI</i></b><span id="aiStatus">● Verificando IA local...</span><button id="helpBtn">❓ Ajuda IA</button></header>
-<div class="layout"><aside>
-<h6>CRIAR & PRODUZIR</h6><button data-view="chat">💬 ChatCreova</button><button data-fill="Crie um roteiro completo para vídeo sobre ">🎬 Vídeo</button><button data-fill="Crie um prompt profissional de imagem sobre ">🖼️ Imagem</button><button data-fill="Crie uma narração profissional sobre ">🎙️ Voz</button><button data-fill="Crie uma música original no estilo ">🎵 Música</button><button data-fill="Crie um prompt profissional para ">✍️ Prompts</button><button data-fill="Crie a estrutura de um site ou aplicativo para ">🌐 Sites & Apps</button>
-<h6>TRABALHO & CONHECIMENTO</h6><button data-fill="Ajude com estudo ou educação sobre ">🎓 Educação</button><button data-fill="Crie um material profissional para ">💼 Profissional</button><button data-fill="Crie uma solução empresarial para ">🏢 Empresas</button><button data-fill="Crie conteúdo de vendas e e-commerce para ">🛒 Vendas</button><button data-fill="Preciso de uma ferramenta para ">⚡ Ferramentas</button>
-<h6>ORGANIZAÇÃO</h6><button data-view="channels">📺 Canais & Marcas</button><button data-view="space">📁 Meu Espaço</button><button id="helpSideBtn">❓ Ajuda / Suporte IA</button>
-</aside><main>
-<section id="chat" class="view active"><span class="pill">ASSISTENTE CRIATIVO COM IA</span><h1>O que vamos <em>criar?</em></h1><p>Converse normalmente. Explique o que precisa e o ChatCreova prepara a entrega.</p><select id="channelSelect"><option value="">Sem canal/marca selecionado</option></select><div id="messages"><div class="msg ai"><b>✦ ChatCreova AI</b><p>Olá! Diga o que você quer criar.</p></div></div><div class="composer"><textarea id="input" placeholder="Diga ao ChatCreova o que você precisa..."></textarea><button id="send">➤ Enviar</button></div></section>
-<section id="channels" class="view"><h1>Canais & <em>Marcas</em></h1><p>Cadastre projetos para reutilizar identidade, público e preferências.</p><div class="panel"><input id="chName" placeholder="Nome do canal ou marca"><input id="chPlatform" placeholder="Plataforma"><input id="chNiche" placeholder="Nicho / assunto"><input id="chLanguage" placeholder="Idioma principal"><textarea id="chRules" placeholder="Identidade visual, personagem, público, regras e preferências..."></textarea><button id="saveChannel">＋ Salvar canal/marca</button></div><div id="channelCards"></div></section>
-<section id="space" class="view"><h1>Meu <em>Espaço</em></h1><div class="panel">Organize aqui seus projetos e conteúdos salvos.</div></section>
-</main></div>
-<div id="help" class="modal"><div class="box"><button id="closeHelp">✕</button><h2>❓ Ajuda / Suporte IA</h2><textarea id="helpInput" placeholder="Como posso usar o ChatCreova?"></textarea><button id="helpSend">Perguntar</button><pre id="helpAnswer"></pre></div></div>
-<script src="V17-app.js?v=17"></script></body></html>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#06143d"
+  >
+
+  <title>ChatCreova AI — V21</title>
+
+  <link
+    rel="stylesheet"
+    href="V21-estilo.css?v=21"
+  >
+</head>
+
+
+<body>
+
+<!-- ======================================================
+     TOPO
+====================================================== -->
+
+<header class="topbar">
+
+  <div class="brand">
+    ✦ ChatCreova <i>AI</i>
+  </div>
+
+  <div class="top-actions">
+
+    <span class="credit-top">
+      ◉ <strong id="topCreditBalance">—</strong> créditos
+    </span>
+
+    <span class="version">
+      V21
+    </span>
+
+  </div>
+
+</header>
+
+
+<div class="layout">
+
+
+<!-- ======================================================
+     MENU PRINCIPAL
+====================================================== -->
+
+<aside class="sidebar">
+
+
+  <h6>CENTRAL</h6>
+
+  <button
+    data-view="chat"
+    class="active"
+  >
+    💬 <span>Queen</span>
+  </button>
+
+  <button data-view="manager">
+    👑 <span>Gerente</span>
+  </button>
+
+
+  <h6>CRIAÇÃO</h6>
+
+  <button data-view="art">
+    🎨 <span>Diretor de Arte</span>
+  </button>
+
+  <button data-view="video">
+    🎬 <span>Diretor de Vídeo</span>
+  </button>
+
+  <button data-view="voice">
+    🎙️ <span>Narrador</span>
+  </button>
+
+  <button data-view="music">
+    🎵 <span>Maestro</span>
+  </button>
+
+  <button data-view="editor">
+    ✂️ <span>Editor de Vídeo</span>
+  </button>
+
+  <button data-view="musicvideo">
+    🎞️ <span>Diretor de Videoclipe</span>
+  </button>
+
+
+  <h6>TRABALHO</h6>
+
+  <button data-view="office">
+    🗂️ <span>Escritório</span>
+  </button>
+
+  <button data-view="teacher">
+    🎓 <span>Professor</span>
+  </button>
+
+  <button data-view="seller">
+    🛒 <span>Vendedor</span>
+  </button>
+
+
+  <h6>ORIENTAÇÃO</h6>
+
+  <button data-view="health">
+    🩺 <span>Saúde</span>
+  </button>
+
+  <button data-view="legal">
+    ⚖️ <span>Direitos do Trabalhador</span>
+  </button>
+
+  <button data-view="support">
+    💙 <span>Apoio Emocional</span>
+  </button>
+
+
+  <h6>SISTEMA</h6>
+
+  <button data-view="engineer">
+    🛠️ <span>Engenheiro</span>
+  </button>
+
+  <button data-view="projects">
+    📁 <span>Projetos</span>
+  </button>
+
+  <button data-view="files">
+    📎 <span>Arquivos</span>
+  </button>
+
+  <button data-view="history">
+    🕘 <span>Histórico</span>
+  </button>
+
+  <button data-view="channels">
+    📺 <span>Canais & Marcas</span>
+  </button>
+
+  <button data-view="account">
+    👤 <span>Minha Conta</span>
+  </button>
+
+  <button
+    id="helpSideBtn"
+    type="button"
+  >
+    ❓ <span>Ajuda</span>
+  </button>
+
+</aside>
+
+
+<!-- ======================================================
+     CONTEÚDO
+====================================================== -->
+
+<main>
+
+
+<!-- ======================================================
+     QUEEN
+====================================================== -->
+
+<section
+  id="chat"
+  class="view active"
+>
+
+  <span class="pill">
+    ASSISTENTE CENTRAL
+  </span>
+
+  <h1>
+    Olá, eu sou a <em>Queen</em>
+  </h1>
+
+  <p>
+    Converse, crie, envie arquivos e trabalhe com os
+    especialistas do ChatCreova.
+  </p>
+
+
+  <div class="project-bar">
+
+    <select id="channelSelect">
+
+      <option value="">
+        Sem canal/marca selecionado
+      </option>
+
+    </select>
+
+
+    <select id="globalFormat">
+
+      <option value="">
+        Formato automático
+      </option>
+
+      <option value="9:16">
+        Vertical 9:16
+      </option>
+
+      <option value="16:9">
+        Horizontal 16:9
+      </option>
+
+      <option value="1:1">
+        Quadrado 1:1
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <div id="messages">
+
+    <div class="msg ai">
+
+      <b>
+        ✦ Queen — ChatCreova AI
+      </b>
+
+      <p>
+        Olá! O que vamos criar ou resolver hoje?
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="composer-tools">
+
+    <label class="attach-button">
+
+      📎 Anexar arquivo
+
+      <input
+        id="chatFile"
+        type="file"
+        hidden
+        multiple
+      >
+
+    </label>
+
+
+    <button
+      id="voiceInputBtn"
+      type="button"
+    >
+      🎤 Falar
+    </button>
+
+  </div>
+
+
+  <div
+    id="attachedFiles"
+    class="attached-files"
+  ></div>
+
+
+  <div class="composer">
+
+    <textarea
+      id="input"
+      placeholder="Diga à Queen o que você precisa..."
+    ></textarea>
+
+    <button id="send">
+      ➤ Enviar
+    </button>
+
+  </div>
+
+
+  <div class="voice-controls">
+
+    <span>
+      🔊 Voz da Queen
+    </span>
+
+    <select id="queenVoiceSpeed">
+
+      <option value="0.9">
+        Mais lenta
+      </option>
+
+      <option
+        value="1"
+        selected
+      >
+        Normal
+      </option>
+
+      <option value="1.15">
+        Rápida
+      </option>
+
+      <option value="1.3">
+        Mais rápida
+      </option>
+
+    </select>
+
+
+    <button
+      id="queenVoiceToggle"
+      type="button"
+    >
+      Voz: desligada
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     GERENTE
+====================================================== -->
+
+<section
+  id="manager"
+  class="view"
+>
+
+  <span class="pill">
+    COORDENAÇÃO
+  </span>
+
+  <h1>
+    Gerente <em>ChatCreova</em>
+  </h1>
+
+  <p>
+    Coordena tarefas e distribui trabalhos entre os
+    especialistas.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Central de tarefas
+    </h2>
+
+    <div class="task-status-grid">
+
+      <div>
+        <strong>Recebidas</strong>
+        <span id="tasksReceived">0</span>
+      </div>
+
+      <div>
+        <strong>Em execução</strong>
+        <span id="tasksRunning">0</span>
+      </div>
+
+      <div>
+        <strong>Concluídas</strong>
+        <span id="tasksCompleted">0</span>
+      </div>
+
+      <div>
+        <strong>Erros</strong>
+        <span id="tasksError">0</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- ======================================================
+     DIRETOR DE ARTE
+====================================================== -->
+
+<section
+  id="art"
+  class="view"
+>
+
+  <span class="pill">
+    ESTÚDIO DE IMAGEM
+  </span>
+
+  <h1>
+    Diretor de <em>Arte</em>
+  </h1>
+
+  <p>
+    Criação de imagens, capas, thumbnails, personagens,
+    cenários e identidade visual.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Criar imagem
+    </h2>
+
+    <label>
+      O que você quer criar?
+    </label>
+
+    <textarea
+      id="artIdea"
+      placeholder="Ex.: capa cinematográfica para uma música sertaneja..."
+    ></textarea>
+
+
+    <div class="form-grid">
+
+      <div>
+
+        <label>
+          Formato
+        </label>
+
+        <select id="artFormat">
+
+          <option value="9:16">
+            Vertical 9:16
+          </option>
+
+          <option value="16:9">
+            Horizontal 16:9
+          </option>
+
+          <option value="1:1">
+            Quadrado 1:1
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Modo
+        </label>
+
+        <select id="artMode">
+
+          <option value="create">
+            Criar imagem
+          </option>
+
+          <option value="cover">
+            Capa / Thumbnail
+          </option>
+
+          <option value="character">
+            Personagem consistente
+          </option>
+
+          <option value="edit">
+            Editar imagem
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <label>
+      Imagem de referência
+    </label>
+
+    <input
+      id="artReference"
+      type="file"
+      accept="image/*"
+    >
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Gerar imagem
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     DIRETOR DE VÍDEO
+====================================================== -->
+
+<section
+  id="video"
+  class="view"
+>
+
+  <span class="pill">
+    ESTÚDIO DE VÍDEO
+  </span>
+
+  <h1>
+    Diretor de <em>Vídeo</em>
+  </h1>
+
+  <p>
+    Transforme uma ideia em cenas, movimentos de câmera,
+    roteiro visual e vídeo.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Novo vídeo
+    </h2>
+
+    <label>
+      Ideia do vídeo
+    </label>
+
+    <textarea
+      id="videoIdea"
+      placeholder="Descreva de forma simples o vídeo que deseja criar..."
+    ></textarea>
+
+
+    <div class="form-grid">
+
+      <div>
+
+        <label>
+          Formato
+        </label>
+
+        <select id="videoFormat">
+
+          <option value="9:16">
+            Vertical 9:16
+          </option>
+
+          <option value="16:9">
+            Horizontal 16:9
+          </option>
+
+          <option value="1:1">
+            Quadrado 1:1
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Duração
+        </label>
+
+        <select id="videoDuration">
+
+          <option value="5">
+            5 segundos
+          </option>
+
+          <option value="10">
+            10 segundos
+          </option>
+
+          <option value="15">
+            15 segundos
+          </option>
+
+          <option value="30">
+            30 segundos
+          </option>
+
+          <option value="60">
+            60 segundos
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Estilo
+        </label>
+
+        <select id="videoStyle">
+
+          <option value="cinematic">
+            Cinematográfico
+          </option>
+
+          <option value="realistic">
+            Realista
+          </option>
+
+          <option value="ugc">
+            UGC
+          </option>
+
+          <option value="commercial">
+            Comercial
+          </option>
+
+          <option value="music">
+            Musical
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Plataforma
+        </label>
+
+        <select id="videoPlatform">
+
+          <option value="">
+            Automático
+          </option>
+
+          <option value="youtube">
+            YouTube
+          </option>
+
+          <option value="instagram">
+            Instagram
+          </option>
+
+          <option value="facebook">
+            Facebook
+          </option>
+
+          <option value="tiktok">
+            TikTok
+          </option>
+
+          <option value="kwai">
+            Kwai
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <label>
+      Imagem / personagem de referência
+    </label>
+
+    <input
+      id="videoReference"
+      type="file"
+      accept="image/*"
+    >
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Criar vídeo
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     NARRADOR
+====================================================== -->
+
+<section
+  id="voice"
+  class="view"
+>
+
+  <span class="pill">
+    ESTÚDIO DE VOZ
+  </span>
+
+  <h1>
+    <em>Narrador</em>
+  </h1>
+
+  <p>
+    Transforme textos em narração e prepare vozes para
+    vídeos, anúncios, histórias e projetos.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Criar narração
+    </h2>
+
+    <label>
+      Texto
+    </label>
+
+    <textarea
+      id="voiceText"
+      maxlength="10000"
+      placeholder="Cole ou escreva o texto da narração..."
+    ></textarea>
+
+
+    <div class="field-meta">
+
+      <span>
+        Limite do projeto: 10.000 caracteres
+      </span>
+
+      <span id="voiceCount">
+        0 / 10000
+      </span>
+
+    </div>
+
+
+    <div class="form-grid">
+
+      <div>
+
+        <label>
+          Estilo da voz
+        </label>
+
+        <select id="voiceStyle">
+
+          <option value="natural">
+            Natural
+          </option>
+
+          <option value="commercial">
+            Comercial
+          </option>
+
+          <option value="cinematic">
+            Cinematográfica
+          </option>
+
+          <option value="emotional">
+            Emocional
+          </option>
+
+          <option value="energetic">
+            Energética
+          </option>
+
+          <option value="calm">
+            Calma
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Velocidade
+        </label>
+
+        <select id="narratorSpeed">
+
+          <option value="0.85">
+            Lenta
+          </option>
+
+          <option
+            value="1"
+            selected
+          >
+            Normal
+          </option>
+
+          <option value="1.15">
+            Rápida
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Gerar narração
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     MAESTRO
+====================================================== -->
+
+<section
+  id="music"
+  class="view"
+>
+
+  <span class="pill">
+    ESTÚDIO MUSICAL
+  </span>
+
+  <h1>
+    <em>Maestro</em>
+  </h1>
+
+  <p>
+    Criação musical com controle de estilo, andamento,
+    instrumentos, voz e estrutura.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Nova música
+    </h2>
+
+    <label>
+      Tema / ideia
+    </label>
+
+    <textarea
+      id="musicTheme"
+      placeholder="Ex.: samba romântico sobre recomeço..."
+    ></textarea>
+
+
+    <div class="form-grid">
+
+      <div>
+
+        <label>
+          Estilo
+        </label>
+
+        <input
+          id="musicStyle"
+          type="text"
+          placeholder="Samba, sertanejo, funk, gospel..."
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Tipo
+        </label>
+
+        <select id="musicType">
+
+          <option value="vocal">
+            Com vocal
+          </option>
+
+          <option value="instrumental">
+            Instrumental
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label>
+          BPM
+        </label>
+
+        <input
+          id="musicBpm"
+          type="number"
+          min="40"
+          max="220"
+          placeholder="Ex.: 124"
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Duração
+        </label>
+
+        <select id="musicDuration">
+
+          <option value="60">
+            1 minuto
+          </option>
+
+          <option value="120">
+            2 minutos
+          </option>
+
+          <option value="180">
+            3 minutos
+          </option>
+
+          <option value="240">
+            4 minutos
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <label>
+      Instruções adicionais
+    </label>
+
+    <textarea
+      id="musicInstructions"
+      placeholder="Voz, instrumentos, clima, refrão, estrutura..."
+    ></textarea>
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Criar música
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     EDITOR DE VÍDEO
+====================================================== -->
+
+<section
+  id="editor"
+  class="view"
+>
+
+  <span class="pill">
+    EDIÇÃO
+  </span>
+
+  <h1>
+    Editor de <em>Vídeo</em>
+  </h1>
+
+  <p>
+    Organize vídeos, narrações, músicas, legendas e cenas
+    em um único projeto.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Projeto de edição
+    </h2>
+
+    <label>
+      Vídeo
+    </label>
+
+    <input
+      id="editorVideo"
+      type="file"
+      accept="video/*"
+      multiple
+    >
+
+
+    <label>
+      Áudio / narração / música
+    </label>
+
+    <input
+      id="editorAudio"
+      type="file"
+      accept="audio/*"
+      multiple
+    >
+
+
+    <div class="editor-placeholder">
+
+      <strong>
+        Timeline
+      </strong>
+
+      <p>
+        Cortes, ordem das cenas, transições, áudio,
+        legendas e exportação serão ativados aqui.
+      </p>
+
+    </div>
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Abrir editor
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     DIRETOR DE VIDEOCLIPE
+====================================================== -->
+
+<section
+  id="musicvideo"
+  class="view"
+>
+
+  <span class="pill">
+    VIDEOCLIPE
+  </span>
+
+  <h1>
+    Diretor de <em>Videoclipe</em>
+  </h1>
+
+  <p>
+    Construa um videoclipe a partir de uma música,
+    mantendo ritmo, cenas e identidade visual.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Novo videoclipe
+    </h2>
+
+    <label>
+      Música
+    </label>
+
+    <input
+      id="musicVideoAudio"
+      type="file"
+      accept="audio/*"
+    >
+
+
+    <label>
+      Formato
+    </label>
+
+    <select id="musicVideoFormat">
+
+      <option value="9:16">
+        Vertical 9:16
+      </option>
+
+      <option value="16:9">
+        Horizontal 16:9
+      </option>
+
+      <option value="1:1">
+        Quadrado 1:1
+      </option>
+
+    </select>
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Analisar música e criar cenas
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     ESCRITÓRIO
+====================================================== -->
+
+<section
+  id="office"
+  class="view"
+>
+
+  <span class="pill">
+    TRABALHO
+  </span>
+
+  <h1>
+    <em>Escritório</em>
+  </h1>
+
+  <p>
+    Área para documentos, tarefas, relatórios,
+    mensagens e automações.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Escritório digital
+    </h2>
+
+    <div class="feature-grid">
+
+      <div>
+        📄 Documentos
+      </div>
+
+      <div>
+        📁 Arquivos
+      </div>
+
+      <div>
+        📝 Notas
+      </div>
+
+      <div>
+        📊 Relatórios
+      </div>
+
+      <div>
+        ✉️ Mensagens
+      </div>
+
+      <div>
+        ⚙️ Automações
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- ======================================================
+     PROFESSOR
+====================================================== -->
+
+<section
+  id="teacher"
+  class="view"
+>
+
+  <span class="pill">
+    EDUCAÇÃO
+  </span>
+
+  <h1>
+    <em>Professor</em>
+  </h1>
+
+  <p>
+    Estudos, explicações, pesquisas, exercícios,
+    resumos e apoio acadêmico.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Área de estudo
+    </h2>
+
+    <label>
+      O que você quer aprender?
+    </label>
+
+    <textarea
+      id="teacherQuestion"
+      placeholder="Faça uma pergunta ou descreva o assunto que deseja estudar..."
+    ></textarea>
+
+
+    <label>
+      Material de apoio
+    </label>
+
+    <input
+      id="teacherFiles"
+      type="file"
+      multiple
+    >
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Estudar com o Professor
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     VENDEDOR
+====================================================== -->
+
+<section
+  id="seller"
+  class="view"
+>
+
+  <span class="pill">
+    VENDAS
+  </span>
+
+  <h1>
+    <em>Vendedor</em>
+  </h1>
+
+  <p>
+    Criação de anúncios, roteiros UGC, ofertas,
+    chamadas para ação e conteúdo para vendas.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Criativo de vendas
+    </h2>
+
+    <label>
+      Produto / serviço
+    </label>
+
+    <textarea
+      id="sellerProduct"
+      placeholder="Descreva o produto, benefícios e informações confirmadas..."
+    ></textarea>
+
+
+    <label>
+      Plataforma
+    </label>
+
+    <select id="sellerPlatform">
+
+      <option value="shopee">
+        Shopee Vídeo
+      </option>
+
+      <option value="tiktok">
+        TikTok
+      </option>
+
+      <option value="kwai">
+        Kwai
+      </option>
+
+      <option value="instagram">
+        Instagram
+      </option>
+
+      <option value="facebook">
+        Facebook
+      </option>
+
+      <option value="youtube">
+        YouTube Shorts
+      </option>
+
+    </select>
+
+
+    <label>
+      Fotos / arquivos do produto
+    </label>
+
+    <input
+      id="sellerFiles"
+      type="file"
+      multiple
+    >
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Criar anúncio
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     SAÚDE
+====================================================== -->
+
+<section
+  id="health"
+  class="view"
+>
+
+  <span class="pill">
+    SAÚDE & BEM-ESTAR
+  </span>
+
+  <h1>
+    Orientação de <em>Saúde</em>
+  </h1>
+
+  <p>
+    Espaço educativo para compreender informações de
+    saúde e organizar dúvidas para conversar com
+    profissionais.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="notice">
+
+    Este espaço será destinado a informação e orientação
+    geral. Não substitui atendimento médico ou profissional.
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     DIREITOS DO TRABALHADOR
+====================================================== -->
+
+<section
+  id="legal"
+  class="view"
+>
+
+  <span class="pill">
+    ORIENTAÇÃO
+  </span>
+
+  <h1>
+    Direitos do <em>Trabalhador</em>
+  </h1>
+
+  <p>
+    Informações gerais sobre direitos trabalhistas,
+    documentos e fontes oficiais.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="notice">
+
+    O conteúdo desta área será informativo e não substituirá
+    orientação jurídica profissional.
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     APOIO EMOCIONAL
+====================================================== -->
+
+<section
+  id="support"
+  class="view"
+>
+
+  <span class="pill">
+    SAÚDE & BEM-ESTAR
+  </span>
+
+  <h1>
+    Apoio <em>Emocional</em>
+  </h1>
+
+  <p>
+    Um espaço para conversar, organizar os pensamentos e
+    encontrar orientação para momentos difíceis.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="notice">
+
+    Este recurso será voltado a apoio geral e bem-estar.
+    Não substituirá psicoterapia, diagnóstico ou atendimento
+    profissional.
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     ENGENHEIRO
+====================================================== -->
+
+<section
+  id="engineer"
+  class="view"
+>
+
+  <span class="pill">
+    MANUTENÇÃO
+  </span>
+
+  <h1>
+    <em>Engenheiro</em>
+  </h1>
+
+  <p>
+    Diagnóstico técnico, testes, registros e manutenção
+    controlada da plataforma.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Laboratório técnico
+    </h2>
+
+    <div class="feature-grid">
+
+      <div>
+        🔎 Diagnóstico
+      </div>
+
+      <div>
+        🧪 Testes
+      </div>
+
+      <div>
+        📋 Logs
+      </div>
+
+      <div>
+        🛡️ Segurança
+      </div>
+
+      <div>
+        🧩 Módulos
+      </div>
+
+      <div>
+        🔧 Manutenção
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     PROJETOS
+====================================================== -->
+
+<section
+  id="projects"
+  class="view"
+>
+
+  <span class="pill">
+    ORGANIZAÇÃO
+  </span>
+
+  <h1>
+    Meus <em>Projetos</em>
+  </h1>
+
+  <p>
+    Organize trabalhos e mantenha os materiais de cada
+    projeto juntos.
+  </p>
+
+
+  <div class="panel">
+
+    <div class="inline-form">
+
+      <input
+        id="newProject"
+        type="text"
+        placeholder="Nome do novo projeto"
+      >
+
+      <button
+        class="primary-action"
+        type="button"
+      >
+        Criar projeto
+      </button>
+
+    </div>
+
+
+    <div id="projectList"></div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     ARQUIVOS
+====================================================== -->
+
+<section
+  id="files"
+  class="view"
+>
+
+  <span class="pill">
+    ARQUIVOS
+  </span>
+
+  <h1>
+    Arquivos do <em>Projeto</em>
+  </h1>
+
+  <p>
+    Área preparada para reunir documentos, imagens,
+    áudios, vídeos e materiais produzidos.
+  </p>
+
+
+  <div class="panel">
+
+    <label>
+      Adicionar arquivos
+    </label>
+
+    <input
+      id="projectFiles"
+      type="file"
+      multiple
+    >
+
+
+    <div id="fileList"></div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     HISTÓRICO
+====================================================== -->
+
+<section
+  id="history"
+  class="view"
+>
+
+  <span class="pill">
+    HISTÓRICO
+  </span>
+
+  <h1>
+    Histórico de <em>Atividades</em>
+  </h1>
+
+  <p>
+    Registro local das principais ações realizadas na
+    plataforma.
+  </p>
+
+
+  <div class="panel">
+
+    <div id="historyList"></div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     CANAIS & MARCAS
+====================================================== -->
+
+<section
+  id="channels"
+  class="view"
+>
+
+  <span class="pill">
+    IDENTIDADE
+  </span>
+
+  <h1>
+    Canais & <em>Marcas</em>
+  </h1>
+
+  <p>
+    Salve informações de canais, marcas e projetos para
+    manter consistência nas criações.
+  </p>
+
+
+  <div class="panel">
+
+    <h2>
+      Novo canal ou marca
+    </h2>
+
+
+    <div class="form-grid">
+
+      <div>
+
+        <label>
+          Nome
+        </label>
+
+        <input
+          id="chName"
+          type="text"
+          placeholder="Ex.: Brasil Sampa Music"
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Plataforma
+        </label>
+
+        <input
+          id="chPlatform"
+          type="text"
+          placeholder="Instagram, Facebook, YouTube..."
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Nicho
+        </label>
+
+        <input
+          id="chNiche"
+          type="text"
+          placeholder="Música, receitas, vendas..."
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Idioma
+        </label>
+
+        <input
+          id="chLanguage"
+          type="text"
+          placeholder="Português, inglês, espanhol..."
+        >
+
+      </div>
+
+    </div>
+
+
+    <label>
+      Regras / identidade
+    </label>
+
+    <textarea
+      id="chRules"
+      placeholder="Cores, personagem, estilo, público, regras fixas..."
+    ></textarea>
+
+
+    <button
+      id="saveChannel"
+      class="primary-action"
+      type="button"
+    >
+      Salvar canal / marca
+    </button>
+
+
+    <div id="channelCards"></div>
+
+  </div>
+
+</section><!-- ======================================================
+     MINHA CONTA
+====================================================== -->
+
+<section
+  id="account"
+  class="view"
+>
+
+  <span class="pill">
+    CONTA & CRÉDITOS
+  </span>
+
+  <h1>
+    Minha <em>Conta</em>
+  </h1>
+
+  <p>
+    Acompanhe seu plano, créditos, projetos e histórico
+    de utilização da plataforma.
+  </p>
+
+
+  <div class="account-summary">
+
+    <div class="account-stat">
+
+      <span>
+        Créditos disponíveis
+      </span>
+
+      <strong id="creditBalance">
+        —
+      </strong>
+
+    </div>
+
+
+    <div class="account-stat">
+
+      <span>
+        Plano
+      </span>
+
+      <strong id="accountPlan">
+        Em configuração
+      </strong>
+
+    </div>
+
+
+    <div class="account-stat">
+
+      <span>
+        Projetos
+      </span>
+
+      <strong id="projectCount">
+        0
+      </strong>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Comprar créditos
+    </h2>
+
+    <p>
+      Escolha o pacote que melhor atende ao seu uso.
+      Os valores serão ativados quando o sistema de
+      pagamentos estiver configurado e testado.
+    </p>
+
+
+    <div
+      id="creditPackages"
+      class="credit-packages"
+    >
+
+
+      <article
+        class="credit-package"
+        data-package="starter"
+      >
+
+        <h3>
+          Inicial
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="starter"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+
+      <article
+        class="credit-package"
+        data-package="basic"
+      >
+
+        <h3>
+          Básico
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="basic"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+
+      <article
+        class="credit-package featured"
+        data-package="creator"
+      >
+
+        <span class="package-badge">
+          MAIS POPULAR
+        </span>
+
+        <h3>
+          Criador
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="creator"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+
+      <article
+        class="credit-package"
+        data-package="pro"
+      >
+
+        <h3>
+          Pro
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="pro"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+
+      <article
+        class="credit-package"
+        data-package="studio"
+      >
+
+        <h3>
+          Studio
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="studio"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+
+      <article
+        class="credit-package best-value"
+        data-package="max"
+      >
+
+        <span class="package-badge">
+          MELHOR VALOR
+        </span>
+
+        <h3>
+          Max
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="max"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+    </div>
+
+
+    <div class="payment-status">
+
+      <strong>
+        Pagamento em configuração
+      </strong>
+
+      <p>
+        Nenhuma cobrança real será realizada nesta versão.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Histórico de compras
+    </h2>
+
+    <div
+      id="creditPurchaseHistory"
+      class="account-history"
+    >
+
+      <p class="empty-state">
+        Nenhuma compra registrada.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Uso de créditos
+    </h2>
+
+    <div
+      id="creditUsageHistory"
+      class="account-history"
+    >
+
+      <p class="empty-state">
+        Nenhum consumo de créditos registrado.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel security-panel">
+
+    <h2>
+      Segurança da conta
+    </h2>
+
+    <p>
+      Login, sessões, recuperação de acesso,
+      pagamentos, confirmação de transações e
+      créditos individuais serão ativados e testados
+      antes da liberação pública.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     MODAL DE AJUDA
+====================================================== -->
+
+<div
+  id="help"
+  class="modal"
+  aria-hidden="true"
+>
+
+  <div class="modal-card">
+
+    <button
+      id="closeHelp"
+      class="modal-close"
+      type="button"
+      aria-label="Fechar"
+    >
+      ×
+    </button>
+
+
+    <span class="pill">
+      AJUDA
+    </span>
+
+    <h2>
+      Como podemos ajudar?
+    </h2>
+
+    <p>
+      Escreva sua dúvida sobre o uso do ChatCreova AI.
+    </p>
+
+
+    <textarea
+      id="helpInput"
+      placeholder="Digite sua dúvida..."
+    ></textarea>
+
+
+    <button
+      id="helpSend"
+      class="primary-action"
+      type="button"
+    >
+      Enviar pergunta
+    </button>
+
+
+    <div
+      id="helpAnswer"
+      class="help-answer"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================================
+     CHECKOUT DE CRÉDITOS
+====================================================== -->
+
+<div
+  id="creditCheckout"
+  class="modal"
+  aria-hidden="true"
+>
+
+  <div class="modal-card checkout-card">
+
+    <button
+      id="closeCreditCheckout"
+      class="modal-close"
+      type="button"
+      aria-label="Fechar"
+    >
+      ×
+    </button>
+
+
+    <span class="pill">
+      CRÉDITOS
+    </span>
+
+    <h2>
+      Finalizar compra
+    </h2>
+
+
+    <div id="checkoutPackage">
+
+      <p>
+        O sistema de pagamento ainda não está ativo.
+      </p>
+
+    </div>
+
+
+    <div class="payment-status">
+
+      <strong>
+        Pagamento em configuração
+      </strong>
+
+      <p>
+        O checkout real será liberado somente após
+        autenticação, saldo individual, confirmação
+        de transações e segurança estarem testados.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================================
+     FECHAMENTO DA ESTRUTURA
+====================================================== -->
+
+    </main>
+
+  </div>
+
+</div>
+
+
+<script src="V21-app.js?v=21"></script>
+
+</body>
+
+</html>
