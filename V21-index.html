@@ -615,3 +615,413 @@
   </div>
 
 </section>
+<!-- ======================================================
+     NARRADOR
+====================================================== -->
+
+<section
+  id="voice"
+  class="view specialist-view"
+>
+
+  <span class="pill">
+    ESTÚDIO DE VOZ
+  </span>
+
+  <h1>
+    <em>Narrador</em>
+  </h1>
+
+  <p>
+    Narração, tradução, adaptação e produção de voz.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <textarea
+      id="voiceText"
+      maxlength="10000"
+      placeholder="Digite ou cole o texto para narração..."
+    ></textarea>
+
+
+    <div class="counter">
+
+      <span id="voiceCount">
+        0
+      </span>
+
+      / 10000
+
+    </div>
+
+
+    <div class="form-grid">
+
+      <select id="voiceStyle">
+
+        <option value="natural">
+          Natural
+        </option>
+
+        <option value="emotional">
+          Emocional
+        </option>
+
+        <option value="commercial">
+          Publicitária
+        </option>
+
+        <option value="documentary">
+          Documental
+        </option>
+
+        <option value="cinematic">
+          Cinematográfica
+        </option>
+
+      </select>
+
+
+      <select id="narratorSpeed">
+
+        <option value="0.85">
+          Lenta
+        </option>
+
+        <option
+          value="1"
+          selected
+        >
+          Normal
+        </option>
+
+        <option value="1.15">
+          Rápida
+        </option>
+
+        <option value="1.3">
+          Mais rápida
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <button
+      class="generate"
+      disabled
+    >
+      ✦ Gerar narração
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     MAESTRO
+====================================================== -->
+
+<section
+  id="music"
+  class="view specialist-view"
+>
+
+  <span class="pill">
+    ESTÚDIO MUSICAL
+  </span>
+
+  <h1>
+    <em>Maestro</em>
+  </h1>
+
+  <p>
+    Criação musical, letras, arranjos e produção.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <input
+      id="musicTheme"
+      placeholder="Tema ou título"
+    >
+
+
+    <div class="form-grid">
+
+      <input
+        id="musicStyle"
+        placeholder="Gênero / estilo"
+      >
+
+
+      <select id="musicType">
+
+        <option value="vocal">
+          Com vocal
+        </option>
+
+        <option value="instrumental">
+          Instrumental
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="form-grid">
+
+      <input
+        id="musicBpm"
+        placeholder="BPM (opcional)"
+      >
+
+
+      <select id="musicDuration">
+
+        <option value="2">
+          2 minutos
+        </option>
+
+        <option value="3">
+          3 minutos
+        </option>
+
+        <option
+          value="4"
+          selected
+        >
+          4 minutos
+        </option>
+
+        <option value="5">
+          5 minutos
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <textarea
+      id="musicInstructions"
+      placeholder="Instrumentos, voz, clima, referências e outras instruções..."
+    ></textarea>
+
+
+    <button
+      class="generate"
+      disabled
+    >
+      ✦ Criar música
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     EDITOR DE VÍDEO
+====================================================== -->
+
+<section
+  id="editor"
+  class="view specialist-view"
+>
+
+  <span class="pill">
+    SALA DE EDIÇÃO
+  </span>
+
+  <h1>
+    Editor de <em>Vídeo</em>
+  </h1>
+
+  <p>
+    Corte, montagem, áudio, legendas, transições e exportação.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <label class="attach-button">
+
+      🎬 Adicionar vídeo
+
+      <input
+        id="editorVideo"
+        type="file"
+        hidden
+        multiple
+      >
+
+    </label>
+
+
+    <label class="attach-button">
+
+      🎵 Adicionar áudio
+
+      <input
+        id="editorAudio"
+        type="file"
+        hidden
+        multiple
+      >
+
+    </label>
+
+
+    <div class="timeline-placeholder">
+      Timeline do projeto
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     DIRETOR DE VIDEOCLIPE
+====================================================== -->
+
+<section
+  id="musicvideo"
+  class="view specialist-view"
+>
+
+  <span class="pill">
+    ESTÚDIO DE VIDEOCLIPE
+  </span>
+
+  <h1>
+    Diretor de <em>Videoclipe</em>
+  </h1>
+
+  <p>
+    Transforma músicas em conceitos, cenas e videoclipes.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <label class="attach-button">
+
+      🎵 Adicionar música
+
+      <input
+        id="musicVideoAudio"
+        type="file"
+        hidden
+      >
+
+    </label>
+
+
+    <select id="musicVideoFormat">
+
+      <option value="9:16">
+        Vertical 9:16
+      </option>
+
+      <option value="16:9">
+        Horizontal 16:9
+      </option>
+
+      <option value="1:1">
+        Quadrado 1:1
+      </option>
+
+    </select>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     ESCRITÓRIO
+====================================================== -->
+
+<section
+  id="office"
+  class="view specialist-view"
+>
+
+  <span class="pill">
+    ESCRITÓRIO DIGITAL
+  </span>
+
+  <h1>
+    <em>Escritório</em>
+  </h1>
+
+  <p>
+    Documentos, tarefas, agenda, arquivos, relatórios e organização.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="workspace-grid">
+
+    <div class="workspace-card">
+      📅 Agenda
+    </div>
+
+    <div class="workspace-card">
+      ✅ Tarefas
+    </div>
+
+    <div class="workspace-card">
+      📄 Documentos
+    </div>
+
+    <div class="workspace-card">
+      📁 Arquivos
+    </div>
+
+    <div class="workspace-card">
+      📝 Notas
+    </div>
+
+    <div class="workspace-card">
+      📊 Relatórios
+    </div>
+
+    <div class="workspace-card">
+      ✉️ Mensagens
+    </div>
+
+    <div class="workspace-card">
+      ⚙️ Automações
+    </div>
+
+  </div>
+
+</section>
