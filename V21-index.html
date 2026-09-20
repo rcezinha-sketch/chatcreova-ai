@@ -395,16 +395,13 @@
 
   </div>
 
-</section>
-
-
-<!-- ======================================================
+</section><!-- ======================================================
      DIRETOR DE ARTE
 ====================================================== -->
 
 <section
   id="art"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
@@ -416,7 +413,8 @@
   </h1>
 
   <p>
-    Imagens, capas, thumbnails, personagens e identidade visual.
+    Criação de imagens, capas, thumbnails, personagens,
+    cenários e identidade visual.
   </p>
 
   <div class="department-status construction">
@@ -426,72 +424,95 @@
 
   <div class="panel">
 
+    <h2>
+      Criar imagem
+    </h2>
+
+    <label>
+      O que você quer criar?
+    </label>
+
     <textarea
       id="artIdea"
-      placeholder="Descreva a imagem que deseja criar..."
+      placeholder="Ex.: capa cinematográfica para uma música sertaneja..."
     ></textarea>
 
 
     <div class="form-grid">
 
-      <select id="artFormat">
+      <div>
 
-        <option value="9:16">
-          Vertical 9:16
-        </option>
+        <label>
+          Formato
+        </label>
 
-        <option value="16:9">
-          Horizontal 16:9
-        </option>
+        <select id="artFormat">
 
-        <option value="1:1">
-          Quadrado 1:1
-        </option>
+          <option value="9:16">
+            Vertical 9:16
+          </option>
 
-      </select>
+          <option value="16:9">
+            Horizontal 16:9
+          </option>
+
+          <option value="1:1">
+            Quadrado 1:1
+          </option>
+
+        </select>
+
+      </div>
 
 
-      <select id="artMode">
+      <div>
 
-        <option value="image">
-          Criar imagem
-        </option>
+        <label>
+          Modo
+        </label>
 
-        <option value="cover">
-          Criar capa
-        </option>
+        <select id="artMode">
 
-        <option value="thumbnail">
-          Criar thumbnail
-        </option>
+          <option value="create">
+            Criar imagem
+          </option>
 
-        <option value="character">
-          Personagem consistente
-        </option>
+          <option value="cover">
+            Capa / Thumbnail
+          </option>
 
-      </select>
+          <option value="character">
+            Personagem consistente
+          </option>
+
+          <option value="edit">
+            Editar imagem
+          </option>
+
+        </select>
+
+      </div>
 
     </div>
 
 
-    <label class="attach-button">
-
-      📎 Imagem de referência
-
-      <input
-        id="artReference"
-        type="file"
-        hidden
-      >
-
+    <label>
+      Imagem de referência
     </label>
+
+    <input
+      id="artReference"
+      type="file"
+      accept="image/*"
+    >
 
 
     <button
-      class="generate"
+      class="primary-action"
+      type="button"
       disabled
     >
-      ✦ Criar imagem
+      Gerar imagem
     </button>
 
   </div>
@@ -505,7 +526,7 @@
 
 <section
   id="video"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
@@ -517,7 +538,8 @@
   </h1>
 
   <p>
-    Planejamento, cenas, movimento, câmera e geração de vídeos.
+    Transforme uma ideia em cenas, movimentos de câmera,
+    roteiro visual e vídeo.
   </p>
 
   <div class="department-status construction">
@@ -527,101 +549,183 @@
 
   <div class="panel">
 
+    <h2>
+      Novo vídeo
+    </h2>
+
+    <label>
+      Ideia do vídeo
+    </label>
+
     <textarea
       id="videoIdea"
-      placeholder="Qual vídeo vamos produzir?"
+      placeholder="Descreva de forma simples o vídeo que deseja criar..."
     ></textarea>
 
 
     <div class="form-grid">
 
-      <select id="videoFormat">
+      <div>
 
-        <option value="9:16">
-          Vertical 9:16
-        </option>
+        <label>
+          Formato
+        </label>
 
-        <option value="16:9">
-          Horizontal 16:9
-        </option>
+        <select id="videoFormat">
 
-        <option value="1:1">
-          Quadrado 1:1
-        </option>
+          <option value="9:16">
+            Vertical 9:16
+          </option>
 
-      </select>
+          <option value="16:9">
+            Horizontal 16:9
+          </option>
+
+          <option value="1:1">
+            Quadrado 1:1
+          </option>
+
+        </select>
+
+      </div>
 
 
-      <select id="videoDuration">
+      <div>
 
-        <option value="15">
-          15 segundos
-        </option>
+        <label>
+          Duração
+        </label>
 
-        <option value="30">
-          30 segundos
-        </option>
+        <select id="videoDuration">
 
-        <option value="60">
-          60 segundos
-        </option>
+          <option value="5">
+            5 segundos
+          </option>
 
-        <option value="180">
-          3 minutos
-        </option>
+          <option value="10">
+            10 segundos
+          </option>
 
-        <option value="300">
-          5 minutos
-        </option>
+          <option value="15">
+            15 segundos
+          </option>
 
-      </select>
+          <option value="30">
+            30 segundos
+          </option>
+
+          <option value="60">
+            60 segundos
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Estilo
+        </label>
+
+        <select id="videoStyle">
+
+          <option value="cinematic">
+            Cinematográfico
+          </option>
+
+          <option value="realistic">
+            Realista
+          </option>
+
+          <option value="ugc">
+            UGC
+          </option>
+
+          <option value="commercial">
+            Comercial
+          </option>
+
+          <option value="music">
+            Musical
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Plataforma
+        </label>
+
+        <select id="videoPlatform">
+
+          <option value="">
+            Automático
+          </option>
+
+          <option value="youtube">
+            YouTube
+          </option>
+
+          <option value="instagram">
+            Instagram
+          </option>
+
+          <option value="facebook">
+            Facebook
+          </option>
+
+          <option value="tiktok">
+            TikTok
+          </option>
+
+          <option value="kwai">
+            Kwai
+          </option>
+
+        </select>
+
+      </div>
 
     </div>
 
 
-    <input
-      id="videoStyle"
-      placeholder="Estilo visual"
-    >
-
-
-    <input
-      id="videoPlatform"
-      placeholder="Plataforma: Instagram, Facebook, TikTok..."
-    >
-
-
-    <label class="attach-button">
-
-      📎 Adicionar imagem ou vídeo
-
-      <input
-        id="videoReference"
-        type="file"
-        hidden
-        multiple
-      >
-
+    <label>
+      Imagem / personagem de referência
     </label>
+
+    <input
+      id="videoReference"
+      type="file"
+      accept="image/*"
+    >
 
 
     <button
-      class="generate"
+      class="primary-action"
+      type="button"
       disabled
     >
-      ✦ Produzir vídeo
+      Criar vídeo
     </button>
 
   </div>
 
 </section>
+
+
 <!-- ======================================================
      NARRADOR
 ====================================================== -->
 
 <section
   id="voice"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
@@ -633,7 +737,8 @@
   </h1>
 
   <p>
-    Narração, tradução, adaptação e produção de voz.
+    Transforme textos em narração e prepare vozes para
+    vídeos, anúncios, histórias e projetos.
   </p>
 
   <div class="department-status construction">
@@ -643,82 +748,109 @@
 
   <div class="panel">
 
+    <h2>
+      Criar narração
+    </h2>
+
+    <label>
+      Texto
+    </label>
+
     <textarea
       id="voiceText"
       maxlength="10000"
-      placeholder="Digite ou cole o texto para narração..."
+      placeholder="Cole ou escreva o texto da narração..."
     ></textarea>
 
 
-    <div class="counter">
+    <div class="field-meta">
 
-      <span id="voiceCount">
-        0
+      <span>
+        Limite do projeto: 10.000 caracteres
       </span>
 
-      / 10000
+      <span id="voiceCount">
+        0 / 10000
+      </span>
 
     </div>
 
 
     <div class="form-grid">
 
-      <select id="voiceStyle">
+      <div>
 
-        <option value="natural">
-          Natural
-        </option>
+        <label>
+          Estilo da voz
+        </label>
 
-        <option value="emotional">
-          Emocional
-        </option>
+        <select id="voiceStyle">
 
-        <option value="commercial">
-          Publicitária
-        </option>
+          <option value="natural">
+            Natural
+          </option>
 
-        <option value="documentary">
-          Documental
-        </option>
+          <option value="commercial">
+            Comercial
+          </option>
 
-        <option value="cinematic">
-          Cinematográfica
-        </option>
+          <option value="cinematic">
+            Cinematográfica
+          </option>
 
-      </select>
+          <option value="emotional">
+            Emocional
+          </option>
+
+          <option value="energetic">
+            Energética
+          </option>
+
+          <option value="calm">
+            Calma
+          </option>
+
+        </select>
+
+      </div>
 
 
-      <select id="narratorSpeed">
+      <div>
 
-        <option value="0.85">
-          Lenta
-        </option>
+        <label>
+          Velocidade
+        </label>
 
-        <option
-          value="1"
-          selected
-        >
-          Normal
-        </option>
+        <select id="narratorSpeed">
 
-        <option value="1.15">
-          Rápida
-        </option>
+          <option value="0.85">
+            Lenta
+          </option>
 
-        <option value="1.3">
-          Mais rápida
-        </option>
+          <option
+            value="1"
+            selected
+          >
+            Normal
+          </option>
 
-      </select>
+          <option value="1.15">
+            Rápida
+          </option>
+
+        </select>
+
+      </div>
 
     </div>
 
 
     <button
-      class="generate"
+      class="primary-action"
+      type="button"
       disabled
     >
-      ✦ Gerar narração
+      Gerar narração
     </button>
 
   </div>
@@ -732,7 +864,7 @@
 
 <section
   id="music"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
@@ -744,7 +876,8 @@
   </h1>
 
   <p>
-    Criação musical, letras, arranjos e produção.
+    Criação musical com controle de estilo, andamento,
+    instrumentos, voz e estrutura.
   </p>
 
   <div class="department-status construction">
@@ -754,80 +887,122 @@
 
   <div class="panel">
 
-    <input
+    <h2>
+      Nova música
+    </h2>
+
+    <label>
+      Tema / ideia
+    </label>
+
+    <textarea
       id="musicTheme"
-      placeholder="Tema ou título"
-    >
+      placeholder="Ex.: samba romântico sobre recomeço..."
+    ></textarea>
 
 
     <div class="form-grid">
 
-      <input
-        id="musicStyle"
-        placeholder="Gênero / estilo"
-      >
+      <div>
 
+        <label>
+          Estilo
+        </label>
 
-      <select id="musicType">
-
-        <option value="vocal">
-          Com vocal
-        </option>
-
-        <option value="instrumental">
-          Instrumental
-        </option>
-
-      </select>
-
-    </div>
-
-
-    <div class="form-grid">
-
-      <input
-        id="musicBpm"
-        placeholder="BPM (opcional)"
-      >
-
-
-      <select id="musicDuration">
-
-        <option value="2">
-          2 minutos
-        </option>
-
-        <option value="3">
-          3 minutos
-        </option>
-
-        <option
-          value="4"
-          selected
+        <input
+          id="musicStyle"
+          type="text"
+          placeholder="Samba, sertanejo, funk, gospel..."
         >
-          4 minutos
-        </option>
 
-        <option value="5">
-          5 minutos
-        </option>
+      </div>
 
-      </select>
+
+      <div>
+
+        <label>
+          Tipo
+        </label>
+
+        <select id="musicType">
+
+          <option value="vocal">
+            Com vocal
+          </option>
+
+          <option value="instrumental">
+            Instrumental
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label>
+          BPM
+        </label>
+
+        <input
+          id="musicBpm"
+          type="number"
+          min="40"
+          max="220"
+          placeholder="Ex.: 124"
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Duração
+        </label>
+
+        <select id="musicDuration">
+
+          <option value="60">
+            1 minuto
+          </option>
+
+          <option value="120">
+            2 minutos
+          </option>
+
+          <option value="180">
+            3 minutos
+          </option>
+
+          <option value="240">
+            4 minutos
+          </option>
+
+        </select>
+
+      </div>
 
     </div>
 
+
+    <label>
+      Instruções adicionais
+    </label>
 
     <textarea
       id="musicInstructions"
-      placeholder="Instrumentos, voz, clima, referências e outras instruções..."
+      placeholder="Voz, instrumentos, clima, refrão, estrutura..."
     ></textarea>
 
 
     <button
-      class="generate"
+      class="primary-action"
+      type="button"
       disabled
     >
-      ✦ Criar música
+      Criar música
     </button>
 
   </div>
@@ -841,11 +1016,11 @@
 
 <section
   id="editor"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
-    SALA DE EDIÇÃO
+    EDIÇÃO
   </span>
 
   <h1>
@@ -853,7 +1028,8 @@
   </h1>
 
   <p>
-    Corte, montagem, áudio, legendas, transições e exportação.
+    Organize vídeos, narrações, músicas, legendas e cenas
+    em um único projeto.
   </p>
 
   <div class="department-status construction">
@@ -863,37 +1039,55 @@
 
   <div class="panel">
 
-    <label class="attach-button">
+    <h2>
+      Projeto de edição
+    </h2>
 
-      🎬 Adicionar vídeo
-
-      <input
-        id="editorVideo"
-        type="file"
-        hidden
-        multiple
-      >
-
+    <label>
+      Vídeo
     </label>
 
+    <input
+      id="editorVideo"
+      type="file"
+      accept="video/*"
+      multiple
+    >
 
-    <label class="attach-button">
 
-      🎵 Adicionar áudio
-
-      <input
-        id="editorAudio"
-        type="file"
-        hidden
-        multiple
-      >
-
+    <label>
+      Áudio / narração / música
     </label>
 
+    <input
+      id="editorAudio"
+      type="file"
+      accept="audio/*"
+      multiple
+    >
 
-    <div class="timeline-placeholder">
-      Timeline do projeto
+
+    <div class="editor-placeholder">
+
+      <strong>
+        Timeline
+      </strong>
+
+      <p>
+        Cortes, ordem das cenas, transições, áudio,
+        legendas e exportação serão ativados aqui.
+      </p>
+
     </div>
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Abrir editor
+    </button>
 
   </div>
 
@@ -906,11 +1100,11 @@
 
 <section
   id="musicvideo"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
-    ESTÚDIO DE VIDEOCLIPE
+    VIDEOCLIPE
   </span>
 
   <h1>
@@ -918,7 +1112,8 @@
   </h1>
 
   <p>
-    Transforma músicas em conceitos, cenas e videoclipes.
+    Construa um videoclipe a partir de uma música,
+    mantendo ritmo, cenas e identidade visual.
   </p>
 
   <div class="department-status construction">
@@ -928,18 +1123,24 @@
 
   <div class="panel">
 
-    <label class="attach-button">
+    <h2>
+      Novo videoclipe
+    </h2>
 
-      🎵 Adicionar música
-
-      <input
-        id="musicVideoAudio"
-        type="file"
-        hidden
-      >
-
+    <label>
+      Música
     </label>
 
+    <input
+      id="musicVideoAudio"
+      type="file"
+      accept="audio/*"
+    >
+
+
+    <label>
+      Formato
+    </label>
 
     <select id="musicVideoFormat">
 
@@ -957,6 +1158,15 @@
 
     </select>
 
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Analisar música e criar cenas
+    </button>
+
   </div>
 
 </section>
@@ -968,11 +1178,11 @@
 
 <section
   id="office"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
-    ESCRITÓRIO DIGITAL
+    TRABALHO
   </span>
 
   <h1>
@@ -980,70 +1190,8 @@
   </h1>
 
   <p>
-    Documentos, tarefas, agenda, arquivos, relatórios e organização.
-  </p>
-
-  <div class="department-status construction">
-    Em construção
-  </div>
-
-
-  <div class="workspace-grid">
-
-    <div class="workspace-card">
-      📅 Agenda
-    </div>
-
-    <div class="workspace-card">
-      ✅ Tarefas
-    </div>
-
-    <div class="workspace-card">
-      📄 Documentos
-    </div>
-
-    <div class="workspace-card">
-      📁 Arquivos
-    </div>
-
-    <div class="workspace-card">
-      📝 Notas
-    </div>
-
-    <div class="workspace-card">
-      📊 Relatórios
-    </div>
-
-    <div class="workspace-card">
-      ✉️ Mensagens
-    </div>
-
-    <div class="workspace-card">
-      ⚙️ Automações
-    </div>
-
-  </div>
-
-</section>
-<!-- ======================================================
-     PROFESSOR
-====================================================== -->
-
-<section
-  id="teacher"
-  class="view specialist-view"
->
-
-  <span class="pill">
-    ÁREA ACADÊMICA
-  </span>
-
-  <h1>
-    <em>Professor</em>
-  </h1>
-
-  <p>
-    Estudos, explicações, exercícios, pesquisas e materiais acadêmicos.
+    Área para documentos, tarefas, relatórios,
+    mensagens e automações.
   </p>
 
   <div class="department-status construction">
@@ -1053,24 +1201,101 @@
 
   <div class="panel">
 
+    <h2>
+      Escritório digital
+    </h2>
+
+    <div class="feature-grid">
+
+      <div>
+        📄 Documentos
+      </div>
+
+      <div>
+        📁 Arquivos
+      </div>
+
+      <div>
+        📝 Notas
+      </div>
+
+      <div>
+        📊 Relatórios
+      </div>
+
+      <div>
+        ✉️ Mensagens
+      </div>
+
+      <div>
+        ⚙️ Automações
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- ======================================================
+     PROFESSOR
+====================================================== -->
+
+<section
+  id="teacher"
+  class="view"
+>
+
+  <span class="pill">
+    EDUCAÇÃO
+  </span>
+
+  <h1>
+    <em>Professor</em>
+  </h1>
+
+  <p>
+    Estudos, explicações, pesquisas, exercícios,
+    resumos e apoio acadêmico.
+  </p>
+
+  <div class="department-status construction">
+    Em construção
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Área de estudo
+    </h2>
+
+    <label>
+      O que você quer aprender?
+    </label>
+
     <textarea
       id="teacherQuestion"
-      placeholder="O que você quer aprender?"
+      placeholder="Faça uma pergunta ou descreva o assunto que deseja estudar..."
     ></textarea>
 
 
-    <label class="attach-button">
-
-      📎 Adicionar material
-
-      <input
-        id="teacherFiles"
-        type="file"
-        hidden
-        multiple
-      >
-
+    <label>
+      Material de apoio
     </label>
+
+    <input
+      id="teacherFiles"
+      type="file"
+      multiple
+    >
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Estudar com o Professor
+    </button>
 
   </div>
 
@@ -1083,11 +1308,11 @@
 
 <section
   id="seller"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
-    SOCIAL COMMERCE
+    VENDAS
   </span>
 
   <h1>
@@ -1095,7 +1320,8 @@
   </h1>
 
   <p>
-    Conteúdo para produtos, anúncios e vídeos de venda.
+    Criação de anúncios, roteiros UGC, ofertas,
+    chamadas para ação e conteúdo para vendas.
   </p>
 
   <div class="department-status construction">
@@ -1105,17 +1331,25 @@
 
   <div class="panel">
 
+    <h2>
+      Criativo de vendas
+    </h2>
+
+    <label>
+      Produto / serviço
+    </label>
+
     <textarea
       id="sellerProduct"
-      placeholder="Descreva o produto ou serviço..."
+      placeholder="Descreva o produto, benefícios e informações confirmadas..."
     ></textarea>
 
 
-    <select id="sellerPlatform">
+    <label>
+      Plataforma
+    </label>
 
-      <option value="">
-        Escolha a plataforma
-      </option>
+    <select id="sellerPlatform">
 
       <option value="shopee">
         Shopee Vídeo
@@ -1144,18 +1378,24 @@
     </select>
 
 
-    <label class="attach-button">
-
-      📎 Fotos ou vídeos do produto
-
-      <input
-        id="sellerFiles"
-        type="file"
-        hidden
-        multiple
-      >
-
+    <label>
+      Fotos / arquivos do produto
     </label>
+
+    <input
+      id="sellerFiles"
+      type="file"
+      multiple
+    >
+
+
+    <button
+      class="primary-action"
+      type="button"
+      disabled
+    >
+      Criar anúncio
+    </button>
 
   </div>
 
@@ -1168,11 +1408,11 @@
 
 <section
   id="health"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
-    SAÚDE & INFORMAÇÃO
+    SAÚDE & BEM-ESTAR
   </span>
 
   <h1>
@@ -1180,11 +1420,21 @@
   </h1>
 
   <p>
-    Informações educativas e organização de dúvidas de saúde.
+    Espaço educativo para compreender informações de
+    saúde e organizar dúvidas para conversar com
+    profissionais.
   </p>
 
   <div class="department-status construction">
     Em construção
+  </div>
+
+
+  <div class="notice">
+
+    Este espaço será destinado a informação e orientação
+    geral. Não substitui atendimento médico ou profissional.
+
   </div>
 
 </section>
@@ -1196,11 +1446,11 @@
 
 <section
   id="legal"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
-    DIREITOS
+    ORIENTAÇÃO
   </span>
 
   <h1>
@@ -1208,11 +1458,20 @@
   </h1>
 
   <p>
-    Informação geral sobre direitos trabalhistas e documentos.
+    Informações gerais sobre direitos trabalhistas,
+    documentos e fontes oficiais.
   </p>
 
   <div class="department-status construction">
     Em construção
+  </div>
+
+
+  <div class="notice">
+
+    O conteúdo desta área será informativo e não substituirá
+    orientação jurídica profissional.
+
   </div>
 
 </section>
@@ -1224,7 +1483,7 @@
 
 <section
   id="support"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
@@ -1244,6 +1503,15 @@
     Em construção
   </div>
 
+
+  <div class="notice">
+
+    Este recurso será voltado a apoio geral e bem-estar.
+    Não substituirá psicoterapia, diagnóstico ou atendimento
+    profissional.
+
+  </div>
+
 </section>
 
 
@@ -1253,7 +1521,7 @@
 
 <section
   id="engineer"
-  class="view specialist-view"
+  class="view"
 >
 
   <span class="pill">
@@ -1261,11 +1529,12 @@
   </span>
 
   <h1>
-    Engenheiro de <em>Manutenção</em>
+    <em>Engenheiro</em>
   </h1>
 
   <p>
-    Diagnóstico, testes, logs e manutenção controlada do sistema.
+    Diagnóstico técnico, testes, registros e manutenção
+    controlada da plataforma.
   </p>
 
   <div class="department-status construction">
@@ -1273,22 +1542,38 @@
   </div>
 
 
-  <div class="workspace-grid">
+  <div class="panel">
 
-    <div class="workspace-card">
-      🧪 Laboratório
-    </div>
+    <h2>
+      Laboratório técnico
+    </h2>
 
-    <div class="workspace-card">
-      📋 Logs
-    </div>
+    <div class="feature-grid">
 
-    <div class="workspace-card">
-      🔎 Diagnóstico
-    </div>
+      <div>
+        🔎 Diagnóstico
+      </div>
 
-    <div class="workspace-card">
-      🛡️ Segurança
+      <div>
+        🧪 Testes
+      </div>
+
+      <div>
+        📋 Logs
+      </div>
+
+      <div>
+        🛡️ Segurança
+      </div>
+
+      <div>
+        🧩 Módulos
+      </div>
+
+      <div>
+        🔧 Manutenção
+      </div>
+
     </div>
 
   </div>
@@ -1306,23 +1591,40 @@
 >
 
   <span class="pill">
-    WORKSPACE
+    ORGANIZAÇÃO
   </span>
 
   <h1>
     Meus <em>Projetos</em>
   </h1>
 
+  <p>
+    Organize trabalhos e mantenha os materiais de cada
+    projeto juntos.
+  </p>
+
 
   <div class="panel">
 
-    <button id="newProject">
-      ＋ Novo projeto
-    </button>
+    <div class="inline-form">
 
-    <div id="projectList">
-      Nenhum projeto criado.
+      <input
+        id="newProject"
+        type="text"
+        placeholder="Nome do novo projeto"
+      >
+
+      <button
+        class="primary-action"
+        type="button"
+      >
+        Criar projeto
+      </button>
+
     </div>
+
+
+    <div id="projectList"></div>
 
   </div>
 
@@ -1339,33 +1641,33 @@
 >
 
   <span class="pill">
-    ARQUIVOS DO PROJETO
+    ARQUIVOS
   </span>
 
   <h1>
-    Meus <em>Arquivos</em>
+    Arquivos do <em>Projeto</em>
   </h1>
+
+  <p>
+    Área preparada para reunir documentos, imagens,
+    áudios, vídeos e materiais produzidos.
+  </p>
 
 
   <div class="panel">
 
-    <label class="attach-button">
-
-      📎 Importar arquivos
-
-      <input
-        id="projectFiles"
-        type="file"
-        hidden
-        multiple
-      >
-
+    <label>
+      Adicionar arquivos
     </label>
 
+    <input
+      id="projectFiles"
+      type="file"
+      multiple
+    >
 
-    <div id="fileList">
-      Nenhum arquivo adicionado.
-    </div>
+
+    <div id="fileList"></div>
 
   </div>
 
@@ -1382,19 +1684,22 @@
 >
 
   <span class="pill">
-    ATIVIDADE
+    HISTÓRICO
   </span>
 
   <h1>
-    <em>Histórico</em>
+    Histórico de <em>Atividades</em>
   </h1>
+
+  <p>
+    Registro local das principais ações realizadas na
+    plataforma.
+  </p>
 
 
   <div class="panel">
 
-    <div id="historyList">
-      Nenhuma atividade registrada.
-    </div>
+    <div id="historyList"></div>
 
   </div>
 
@@ -1419,45 +1724,579 @@
   </h1>
 
   <p>
-    Salve identidades para reutilizar em seus projetos.
+    Salve informações de canais, marcas e projetos para
+    manter consistência nas criações.
   </p>
 
 
   <div class="panel">
 
-    <input
-      id="chName"
-      placeholder="Nome do canal ou marca"
-    >
+    <h2>
+      Novo canal ou marca
+    </h2>
 
-    <input
-      id="chPlatform"
-      placeholder="Plataforma"
-    >
 
-    <input
-      id="chNiche"
-      placeholder="Nicho / assunto"
-    >
+    <div class="form-grid">
 
-    <input
-      id="chLanguage"
-      placeholder="Idioma principal"
-    >
+      <div>
+
+        <label>
+          Nome
+        </label>
+
+        <input
+          id="chName"
+          type="text"
+          placeholder="Ex.: Brasil Sampa Music"
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Plataforma
+        </label>
+
+        <input
+          id="chPlatform"
+          type="text"
+          placeholder="Instagram, Facebook, YouTube..."
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Nicho
+        </label>
+
+        <input
+          id="chNiche"
+          type="text"
+          placeholder="Música, receitas, vendas..."
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Idioma
+        </label>
+
+        <input
+          id="chLanguage"
+          type="text"
+          placeholder="Português, inglês, espanhol..."
+        >
+
+      </div>
+
+    </div>
+
+
+    <label>
+      Regras / identidade
+    </label>
 
     <textarea
       id="chRules"
-      placeholder="Identidade visual, personagem, público, regras e preferências..."
+      placeholder="Cores, personagem, estilo, público, regras fixas..."
     ></textarea>
 
 
-    <button id="saveChannel">
-      ＋ Salvar canal/marca
+    <button
+      id="saveChannel"
+      class="primary-action"
+      type="button"
+    >
+      Salvar canal / marca
     </button>
+
+
+    <div id="channelCards"></div>
+
+  </div>
+
+</section><!-- ======================================================
+     MINHA CONTA
+====================================================== -->
+
+<section
+  id="account"
+  class="view"
+>
+
+  <span class="pill">
+    CONTA & CRÉDITOS
+  </span>
+
+  <h1>
+    Minha <em>Conta</em>
+  </h1>
+
+  <p>
+    Acompanhe seu plano, créditos, projetos e histórico
+    de utilização da plataforma.
+  </p>
+
+
+  <div class="account-summary">
+
+    <div class="account-stat">
+
+      <span>
+        Créditos disponíveis
+      </span>
+
+      <strong id="creditBalance">
+        —
+      </strong>
+
+    </div>
+
+
+    <div class="account-stat">
+
+      <span>
+        Plano
+      </span>
+
+      <strong id="accountPlan">
+        Em configuração
+      </strong>
+
+    </div>
+
+
+    <div class="account-stat">
+
+      <span>
+        Projetos
+      </span>
+
+      <strong id="projectCount">
+        0
+      </strong>
+
+    </div>
 
   </div>
 
 
-  <div id="channelCards"></div>
+  <div class="panel">
+
+    <h2>
+      Comprar créditos
+    </h2>
+
+    <p>
+      Escolha o pacote que melhor atende ao seu uso.
+      Os valores serão ativados quando o sistema de
+      pagamentos estiver configurado e testado.
+    </p>
+
+
+    <div
+      id="creditPackages"
+      class="credit-packages"
+    >
+
+
+      <article
+        class="credit-package"
+        data-package="starter"
+      >
+
+        <h3>
+          Inicial
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="starter"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+
+      <article
+        class="credit-package"
+        data-package="basic"
+      >
+
+        <h3>
+          Básico
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="basic"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+
+      <article
+        class="credit-package featured"
+        data-package="creator"
+      >
+
+        <span class="package-badge">
+          MAIS POPULAR
+        </span>
+
+        <h3>
+          Criador
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="creator"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+
+      <article
+        class="credit-package"
+        data-package="pro"
+      >
+
+        <h3>
+          Pro
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="pro"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+
+      <article
+        class="credit-package"
+        data-package="studio"
+      >
+
+        <h3>
+          Studio
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="studio"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+
+      <article
+        class="credit-package best-value"
+        data-package="max"
+      >
+
+        <span class="package-badge">
+          MELHOR VALOR
+        </span>
+
+        <h3>
+          Max
+        </h3>
+
+        <div class="package-credits">
+          — créditos
+        </div>
+
+        <div class="package-price">
+          R$ —
+        </div>
+
+        <button
+          class="buy-credits"
+          type="button"
+          data-package="max"
+          disabled
+        >
+          Comprar
+        </button>
+
+      </article>
+
+    </div>
+
+
+    <div class="payment-status">
+
+      <strong>
+        Pagamento em configuração
+      </strong>
+
+      <p>
+        Nenhuma cobrança real será realizada nesta versão.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Histórico de compras
+    </h2>
+
+    <div
+      id="creditPurchaseHistory"
+      class="account-history"
+    >
+
+      <p class="empty-state">
+        Nenhuma compra registrada.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      Uso de créditos
+    </h2>
+
+    <div
+      id="creditUsageHistory"
+      class="account-history"
+    >
+
+      <p class="empty-state">
+        Nenhum consumo de créditos registrado.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel security-panel">
+
+    <h2>
+      Segurança da conta
+    </h2>
+
+    <p>
+      Login, sessões, recuperação de acesso,
+      pagamentos, confirmação de transações e
+      créditos individuais serão ativados e testados
+      antes da liberação pública.
+    </p>
+
+  </div>
 
 </section>
+
+
+<!-- ======================================================
+     MODAL DE AJUDA
+====================================================== -->
+
+<div
+  id="help"
+  class="modal"
+  aria-hidden="true"
+>
+
+  <div class="modal-card">
+
+    <button
+      id="closeHelp"
+      class="modal-close"
+      type="button"
+      aria-label="Fechar"
+    >
+      ×
+    </button>
+
+
+    <span class="pill">
+      AJUDA
+    </span>
+
+    <h2>
+      Como podemos ajudar?
+    </h2>
+
+    <p>
+      Escreva sua dúvida sobre o uso do ChatCreova AI.
+    </p>
+
+
+    <textarea
+      id="helpInput"
+      placeholder="Digite sua dúvida..."
+    ></textarea>
+
+
+    <button
+      id="helpSend"
+      class="primary-action"
+      type="button"
+    >
+      Enviar pergunta
+    </button>
+
+
+    <div
+      id="helpAnswer"
+      class="help-answer"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================================
+     CHECKOUT DE CRÉDITOS
+====================================================== -->
+
+<div
+  id="creditCheckout"
+  class="modal"
+  aria-hidden="true"
+>
+
+  <div class="modal-card checkout-card">
+
+    <button
+      id="closeCreditCheckout"
+      class="modal-close"
+      type="button"
+      aria-label="Fechar"
+    >
+      ×
+    </button>
+
+
+    <span class="pill">
+      CRÉDITOS
+    </span>
+
+    <h2>
+      Finalizar compra
+    </h2>
+
+
+    <div id="checkoutPackage">
+
+      <p>
+        O sistema de pagamento ainda não está ativo.
+      </p>
+
+    </div>
+
+
+    <div class="payment-status">
+
+      <strong>
+        Pagamento em configuração
+      </strong>
+
+      <p>
+        O checkout real será liberado somente após
+        autenticação, saldo individual, confirmação
+        de transações e segurança estarem testados.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================================
+     FECHAMENTO DA ESTRUTURA
+====================================================== -->
+
+    </main>
+
+  </div>
+
+</div>
+
+
+<script src="V21-app.js?v=21"></script>
+
+</body>
+
+</html>
