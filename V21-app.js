@@ -6,9 +6,7 @@
    NÚCLEO PRINCIPAL
 ========================================================= */
 
-const OLLAMA = "http://127.0.0.1:11434";
-const MODEL = "qwen3.5:0.8b";
-
+const MODEL = "qwen3.5:4b";
 const CHANNEL_KEY = "chatcreova_v20_channels";
 const PROJECT_KEY = "chatcreova_v20_projects";
 const HISTORY_KEY = "chatcreova_v20_history";
