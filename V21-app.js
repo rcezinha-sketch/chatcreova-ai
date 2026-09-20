@@ -101,7 +101,7 @@ function escapeHTML(value = "") {
 async function timedFetch(
   url,
   options = {},
-  timeout = 180000
+  timeout =600000
 ) {
 
   const controller =
