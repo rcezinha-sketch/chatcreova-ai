@@ -6,7 +6,7 @@
    NÚCLEO PRINCIPAL
 ========================================================= */
 
-const OLLAMA = "http://127.0.0.1:11434";
+const OLLAMA = "http://127.0.0.1:8765";
 const MODEL = "qwen3.5:4b";
 
 const CHANNEL_KEY = "chatcreova_v20_channels";
@@ -547,257 +547,37 @@ async function ollamaChat(
 
   try {
 
-    const response =
-      await fetch(
-
-        `${OLLAMA}/api/chat`,
-
-        {
-
-          method: "POST",
-
-          headers: {
-
-            "Content-Type":
-              "application/json"
-
-          },
-
-          signal:
-            controller.signal,
-
-          body:
-            JSON.stringify({
-
-              model: MODEL,
-
-              stream: true,
-
-              think: false,
-
-              keep_alive: "20m",
-
-              options: {
-
-                num_predict: 900
-
-              },
-
-              messages: [
-
-                {
-
-                  role: "system",
-                  content: SYSTEM
-
-                },
-
-                {
-
-                  role: "user",
-                  content: message
-
-                }
-
-              ]
-
-            })
-
-        }
-
-      );
-
+    const response = await fetch(`${OLLAMA}/api/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      signal: controller.signal,
+      body: JSON.stringify({
+        message: message,
+        user_id: "local_user",
+        project_id: "default_project",
+        project_name: "ChatCreova AI"
+      })
+    });
 
     if (!response.ok) {
-
-      throw new Error(
-        `Falha de comunicação: HTTP ${response.status}`
-      );
-
+      throw new Error(`Falha de comunicação: HTTP ${response.status}`);
     }
 
+    const data = await response.json();
 
-    if (!response.body) {
-
-      throw new Error(
-        "O navegador não disponibilizou o fluxo da resposta."
-      );
-
+    if (!data.ok) {
+      throw new Error(data.message || data.detail || "Falha na API V23.");
     }
 
-
-    const reader =
-      response.body.getReader();
-
-
-    const decoder =
-      new TextDecoder("utf-8");
-
-
-    let buffer = "";
-
-    let fullText = "";
-
-
-    function publish() {
-
-      const visibleText =
-        cleanQueenText(fullText);
-
-
-      if (
-        onChunk &&
-        visibleText
-      ) {
-
-        onChunk(
-          visibleText
-        );
-
-      }
-
-    }
-
-
-    function consumeLine(line) {
-
-      const cleanLine =
-        line.trim();
-
-
-      if (!cleanLine) {
-
-        return;
-
-      }
-
-
-      let data;
-
-
-      try {
-
-        data =
-          JSON.parse(cleanLine);
-
-      } catch (error) {
-
-        console.warn(
-          "ChatCreova V22: bloco de streaming inválido.",
-          cleanLine,
-          error
-        );
-
-        return;
-
-      }
-
-
-      if (data?.error) {
-
-        throw new Error(
-          data.error
-        );
-
-      }
-
-
-      const chunk =
-        data?.message?.content || "";
-
-
-      if (chunk) {
-
-        fullText +=
-          chunk;
-
-
-        publish();
-
-      }
-
-    }
-
-
-    while (true) {
-
-      const {
-        done,
-        value
-      } =
-        await reader.read();
-
-
-      if (done) {
-
-        break;
-
-      }
-
-
-      buffer +=
-        decoder.decode(
-          value,
-          {
-            stream: true
-          }
-        );
-
-
-      const lines =
-        buffer.split("\n");
-
-
-      buffer =
-        lines.pop() || "";
-
-
-      for (
-        const line
-        of lines
-      ) {
-
-        consumeLine(line);
-
-      }
-
-    }
-
-
-    buffer +=
-      decoder.decode();
-
-
-    if (buffer.trim()) {
-
-      consumeLine(buffer);
-
-    }
-
-
-    const finalText =
-      cleanQueenText(
-        fullText
-      );
-
+    const finalText = cleanQueenText(data.message || "");
 
     if (!finalText) {
-
-      throw new Error(
-        "O motor terminou sem retornar conteúdo."
-      );
-
+      throw new Error("A Queen terminou sem retornar conteúdo.");
     }
-
 
     if (onChunk) {
-
-      onChunk(
-        finalText
-      );
-
+      onChunk(finalText);
     }
-
 
     return finalText;
 
